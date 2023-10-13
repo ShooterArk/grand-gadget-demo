@@ -10,7 +10,7 @@ interface ICard {
 
 const Card: React.FC<ICard> = ({ item, onAddToCart }) => {
 
-    const  { imageFileName, name, price, description = '', id } = item;
+    const { imageFileName, name, price, description = '', id } = item;
 
     return (
         <span key={id} className='bg-white rounded-lg shadow-lg overflow-hidden mx-4 lg:mx-0 px-4 pb-4'>

@@ -5,6 +5,7 @@ import CartHeader from './components/cart/CartHeader';
 
 import { useAppSelector } from '@/hook/hooks';
 import CartSummary from './components/cart/CartSummary';
+import Divider from '@/components/Divider';
 
 const Cart = () => {
 
@@ -20,8 +21,9 @@ const Cart = () => {
           )
         })}
       </div>
-      <div className='bg-white rounded col-span-2 lg:col-span-1'>
+      <div className='bg-white rounded col-span-2 lg:col-span-1 h-fit'>
         <CartHeader title='Summary' />
+        <Divider />
         <CartSummary />
       </div>
     </div>

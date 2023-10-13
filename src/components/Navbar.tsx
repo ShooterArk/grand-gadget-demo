@@ -16,14 +16,13 @@ interface INavbar {
 
 const NavLink: React.FC<INavLinks> = ({index, href, label, uppercase = false}) => {
     const router = useRouter();
-    return <Link key={index ?? 0} href={href} className={`  px-5 py-2 mr-1 ${uppercase && 'uppercase'} ${router?.pathname === '/' ? 'text-blue-600 hover:text-blue-900' : 'text-gray-500 hover:text-gray-900'}`}>{label}</Link>
+    return <Link key={index ?? 0} href={href} className={`px-5 py-2 mr-1 ${uppercase ? 'uppercase' : 'capitalize'} ${router?.pathname === '/' ? 'text-blue-600 hover:text-blue-900' : 'text-gray-500 hover:text-gray-900'}`}>{label}</Link>
 }
 
 const Navbar: React.FC<INavbar> = ({navLinks}) => {
 
     const cartState = useAppSelector((state) => state.cart);
     const router = useRouter();
-    console.log("Current url", router.pathname);
 
     return (
         <div className="container-fluid container-xl p-5 flex gap-0 items-center justify-between">
@@ -35,8 +34,8 @@ const Navbar: React.FC<INavbar> = ({navLinks}) => {
                     <Link key={index} href={link.href} className={`px-4 py-2 ${router?.pathname === '/' ? 'text-blue-600 hover:text-blue-900' : 'text-gray-500 hover:text-gray-900'}`}>{link.label}</Link>
                 ))}
             </div>
-            <div className=' text-right text-xs'>
-                <NavLink href="/cart" label={`Cart(${cartState?.cardItems.length})`} uppercase={true} />
+            <div className=' text-right text-xs lg:text-sm'>
+                <NavLink href="/cart" label={`Cart(${cartState?.cardItems.length})`} uppercase={false} />
             </div>
         </div>
     )
