@@ -16,7 +16,7 @@ interface INavbar {
 
 const NavLink: React.FC<INavLinks> = ({index, href, label, uppercase = false}) => {
     const router = useRouter();
-    return <Link key={index ?? 0} href={href} className={`px-5 py-2 mr-1 ${uppercase ? 'uppercase' : 'capitalize'} ${router?.pathname === '/' ? 'text-blue-600 hover:text-blue-900' : 'text-gray-500 hover:text-gray-900'}`}>{label}</Link>
+    return <Link key={index ?? 0} href={href} className={`px-5 py-2 mr-1 ${uppercase ? 'uppercase' : 'capitalize'} ${router?.pathname === '/cart' ? 'text-blue-600 hover:text-blue-900' : 'text-gray-500 hover:text-gray-900'}`}>{label}</Link>
 }
 
 const Navbar: React.FC<INavbar> = ({navLinks}) => {
