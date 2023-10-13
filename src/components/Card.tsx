@@ -14,8 +14,8 @@ const Card: React.FC<ICard> = ({ item, onAddToCart }) => {
 
     return (
         <span key={id} className='bg-white rounded-lg shadow-lg overflow-hidden mx-4 lg:mx-0 px-4 pb-4'>
-            <div className='flex justify-center' style={{height: 300}}>
-                <Image src={`/images/${imageFileName}`} alt='thumbnail' width={250} height={250} />
+            <div className='flex justify-center aspect-square'>
+                <Image src={`/images/${imageFileName}`} alt='thumbnail' width={250} height={250} className='!w-fit' />
             </div>
             <h2 className='font-semibold text-2xl text-slate-700 mb-2'>{name}</h2>
             <h3>${price}</h3>
